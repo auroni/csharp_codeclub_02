@@ -12,20 +12,24 @@ namespace ConsoleApplication1
         private int hitpoints = 0;
         private int attack = 0;
 
-        public Player(string givenName)
+        public Player(string givenName, int giveHP, int giveAttack)
         {
             name = givenName;
-            hitpoints = 100;
+            hitpoints = giveHP;
+            attack = giveAttack;
         }
 
         public void TakeDamage()
         {
-            hitpoints = hitpoints - 10;
+            Console.WriteLine(name + " takes damage");
+
+            hitpoints -= attack;
         }
 
         public void Print()
         {
             Console.WriteLine("Current health: " + hitpoints);
+            Console.WriteLine("\nWhat next?\n<Attack> <Defend> <Quit>");
         }
 
         public string Name
